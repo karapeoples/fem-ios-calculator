@@ -1,0 +1,68 @@
+.back-ground {
+	background: #333;
+	width: 40%;
+	margin: 0 auto;
+	height: 600px;
+	margin-top: 5%;
+	border: 5px double darkorange;
+	border-radius: 2%;
+}
+.input {
+	margin: 0 auto;
+	width: 98%;
+	margin-right: 1.5%;
+}
+input {
+	width: 100%;
+	text-align: end;
+	color: white;
+	background: #333;
+	font-size: 35px;
+	border: 2px groove white;
+}
+
+button {
+	font-size: 50px;
+	width: 25%;
+	border: 2px solid #333;
+}
+button:hover {
+	background: #555;
+}
+
+.row {
+	display: flex;
+	width: 99%;
+	justify-content: space-evenly;
+	height: 110px;
+	margin: 0 auto;
+}
+
+.row-first > button {
+	width: 25%;
+}
+.row-first > div {
+	width: 25%;
+	text-align: center;
+	color: white;
+	border: 1px double darkorange;
+}
+.row-first :nth-child(4) {
+	background: darkorange;
+}
+.row-second :nth-child(4) {
+	background: darkorange;
+}
+.row-third :nth-child(4) {
+	background: darkorange;
+}
+.row-fourth :nth-child(4) {
+	background: darkorange;
+}
+.row-fifth :nth-child(1) {
+	width: 75%;
+}
+.row-fifth :nth-child(2) {
+	width: 25%;
+	background: darkorange;
+}
