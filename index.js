@@ -1,5 +1,5 @@
 let runningTotal = 0;
-let buffer = "";
+let buffer = '';
 let previousOperator;
 const screen = document.querySelector(".input");
 
@@ -24,15 +24,19 @@ const handleSymbol = value => {
 			previousOperator = null;
 			break;
 		case "=":
-			previousOperator === null ? rerender : flushOperation(parseInt(buffer));
+			if (previousOperator === null) { return } else{ flushOperation(parseInt(buffer));
 			previousOperator = null;
-			buffer = "" + runningTotal;
-			runningTotal = 0;
+			buffer = '' +runningTotal;
+			runningTotal = 0;}
 			break;
 		case "<-":
-			buffer.length === 1 ? (buffer = "0") : (buffer = buffer.substring(0, buffer.length - 1));
+			buffer.length === 1 ? (buffer = '0') : (buffer = buffer.substring(0, buffer.length - 1));
 			break;
 		default:
+		case '+':
+		case '-':
+		case '*':
+		case '/':
 			handleMath(value);
 			break;
 	}
@@ -42,7 +46,8 @@ const handleMath = value => {
 	const intBuffer = parseInt(buffer);
 	runningTotal === 0 ? (runningTotal = intBuffer) : flushOperation(intBuffer);
 	previousOperator = value;
-	buffer = 0;
+	buffer= runningTotal+previousOperator
+	
 };
 
 const flushOperation = intBuffer => {
