@@ -1,8 +1,13 @@
 let runningTotal = 0;
-let buffer = '';
+let buffer = '0';
 let previousOperator;
-const screen = document.querySelector(".input");
 
+
+const rerender = () => {
+	const screen = document.querySelector(".input");
+	screen.value = buffer;
+	
+};
 
 
 document.querySelector(".bubble").addEventListener("click", e => {
@@ -15,7 +20,7 @@ const buttonClick = value => {
 };
 
 const handleNumber = value => {
-	buffer === 0 ? (buffer = +value) : (buffer += value);
+	buffer === 0 ? buffer = +value : buffer =+ value;
 };
 
 const handleSymbol = value => {
@@ -52,7 +57,7 @@ const handleMath = value => {
 };
 
 const flushOperation = intBuffer => {
-	previousOperator === "+"
+	    previousOperator === "+"
 		? (runningTotal += intBuffer)
 		: previousOperator === "-"
 		? (runningTotal -= intBuffer)
@@ -61,6 +66,3 @@ const flushOperation = intBuffer => {
 		: (runningTotal /= intBuffer);
 };
 
-const rerender = () => {
-	screen.textContent = buffer;
-};
