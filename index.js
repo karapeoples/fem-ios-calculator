@@ -3,6 +3,8 @@ let buffer = '';
 let previousOperator;
 const screen = document.querySelector(".input");
 
+
+
 document.querySelector(".bubble").addEventListener("click", e => {
 	buttonClick(e.target.textContent);
 });
@@ -46,8 +48,7 @@ const handleMath = value => {
 	const intBuffer = parseInt(buffer);
 	runningTotal === 0 ? (runningTotal = intBuffer) : flushOperation(intBuffer);
 	previousOperator = value;
-	buffer= runningTotal+previousOperator
-	
+	buffer=0
 };
 
 const flushOperation = intBuffer => {
